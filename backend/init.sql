@@ -14,13 +14,14 @@ CHECK (date_of_birth <= CURRENT_DATE - INTERVAL '18 years');
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    category VARCHAR(255),
+    category_id INTEGER,
     name VARCHAR(255),
     description VARCHAR(255),
     image VARCHAR(255),
     price INTEGER,
     user_id INTEGER,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
 );
 CREATE TABLE favorites (
     id SERIAL PRIMARY KEY,
@@ -28,4 +29,9 @@ CREATE TABLE favorites (
     products_id INTEGER,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (products_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+CREATE TABLE category (
+    id SERIAL PRIMARY KEY,
+    category VARCHAR(255)
 );
