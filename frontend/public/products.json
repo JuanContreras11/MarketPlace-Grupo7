@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "category": "Deporte",
+    "name": "Bicicleta azul",
+    "description": "Radiante bicicleta nueva, de color azul y con todas sus garantías",
+    "image": "https://i.btcdn.co/r/czozNzAwLGc6MTAwMHg/550722f1/885457-1624850-2.jpg",
+    "price": 500000,
+    "user_id": 1,
+    "date": "2024-08-25T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "category": "Deporte",
+    "name": "Bicicleta negra",
+    "description": "Bicicleta deportiva disponible, ideal para superficies rocosas",
+    "image": "https://sparta.cl/media/catalog/product/k/a/kawell_4_2_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=550&width=600&canvas=600:550",
+    "price": 1000000,
+    "user_id": 2,
+    "date": "2024-08-27T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "category": "Hombre",
+    "name": "Zapatos Caterpillar",
+    "description": "Si eres amante del trekking, estos zapatos son para tí",
+    "image": "https://catcl.vtexassets.com/arquivos/ids/460346-800-1000?v=638113158239170000&width=800&height=1000&aspect=true",
+    "price": 500000,
+    "user_id": 3,
+    "date": "2024-08-28T10:00:00Z"
+  },
+  {
+    "id": 4,
+    "category": "Hombre",
+    "name": "Casaca verde",
+    "description": "Casaca verde para hombre, ideal para climas lluviosos.",
+    "image": "https://static.dafiti.cl/p/arrow-4792-4432522-1-product.jpg",
+    "price": 200000,
+    "user_id": 4,
+    "date": "2024-08-29T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "category": "Niños",
+    "name": "Cuna de madera",
+    "description": "Espectacular cuna de madera, para los regalones",
+    "image": "https://www.pellitos.cl/10538-large_default/cuna-de-madera-4-en-1-taylor-chocolate.jpg",
+    "price": 500000,
+    "user_id": 5,
+    "date": "2024-08-30T09:00:00Z"
+  },
+  {
+    "id": 6,
+    "category": "Mujer",
+    "name": "Jean azul claro",
+    "description": "Disponible jean de color azul claro, todas las tallas disponibles",
+    "image": "https://momchic.cl/wp-content/uploads/2024/02/cc057950-13df-45af-ab4b-caf85b63c4ae-jeans_olivia_azul-1.jpeg",
+    "price": 50000,
+    "user_id": 6,
+    "date": "2024-08-22T12:00:00Z"
+  },
+  {
+    "id": 7,
+    "category": "Mujer",
+    "name": "Jumper rojo",
+    "description": "Espectacular jumper rojo, ideal para el verano",
+    "image": "https://static.dafiti.cl/p/ash-1739-643158-1-product.jpg",
+    "price": 900000,
+    "user_id": 7,
+    "date": "2024-08-26T15:00:00Z"
+  },
+  {
+    "id": 8,
+    "category": "Tecnología",
+    "name": "Computador antiguo",
+    "description": "Computador ensamblado en el año 1989, disponible como nuevo",
+    "image": "https://www.latercera.com/resizer/v2/IEJMMN4JSZBZPMMJGFUE2VGYJY.jpg?quality=80&smart=true&auth=30f2046f1979c3872c9f677c838804de860a9691e3a7efa86535bf7e83852fe3&width=790&height=527",
+    "price": 700000,
+    "user_id": 8,
+    "date": "2024-08-24T10:00:00Z"
+  },
+  {
+    "id": 9,
+    "category": "Tecnología",
+    "name": "Computador con accesorios",
+    "description": "El computador incluye teclado y sistema de procesamiento nuevo",
+    "image": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/124404651_01/w=1500,h=1500,fit=pad",
+    "price": 500000,
+    "user_id": 9,
+    "date": "2024-08-23T14:00:00Z"
+  },
+  {
+    "id": 10,
+    "category": "Hombre",
+    "name": "Polera blanca",
+    "description": "Polera blanca ideal para jovenes deportistas",
+    "image": "https://traukochile.cl/cdn/shop/files/11_5.jpg?v=1723042672&width=800",
+    "price": 20000,
+    "user_id": 10,
+    "date": "2024-08-21T16:00:00Z"
+  },
+  {
+    "id": 11,
+    "category": "Hogar",
+    "name": "Sofa de dos cuerpos",
+    "description": "Bello sofá de dos cuerpos, de tela color azul",
+    "image": "https://form.cl/cdn/shop/files/29b04cef-bc94-4991-a659-0030279dde6a-v-epi00007113-4-3dec3877-362b-413b-a002-8b1570b377b2.jpg?v=1721669358&width=500",
+    "price": 500000,
+    "user_id": 11,
+    "date": "2024-08-20T09:00:00Z"
+  },
+  {
+    "id": 12,
+    "category": "Hogar",
+    "name": "Sofá de cuero",
+    "description": "Este hermoso sofá de cuerpo, es totalmente orgánico",
+    "image": "https://www.rosen.cl/media/catalog/product/1/4/14012760-1_1.jpg?quality=100&bg-color=255,255,255&fit=bounds&height=900&width=900&canvas=900:900",
+    "price": 5000000,
+    "user_id": 12,
+    "date": "2024-08-22T11:00:00Z"
+  },
+  {
+    "id": 13,
+    "category": "Hogar",
+    "name": "Cama de dos plazas",
+    "description": "Cama de dos plazas incluye colchón",
+    "image": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/16991450_1/w=1500,h=1500,fit=pad",
+    "price": 500000,
+    "user_id": 13,
+    "date": "2024-08-26T13:00:00Z"
+  },
+  {
+    "id": 14,
+    "category": "Niños",
+    "name": "Coche para bebés",
+    "description": "El coche incluye la silla para el auto, nueva",
+    "image": "https://carestino.cc/_next/image/?url=https%3A%2F%2Fcarestino.cc%2Fuploads%2Fproductos_imagen_1_3177_ar-1685477265.jpg&w=750&q=75",
+    "price": 150000,
+    "user_id": 14,
+    "date": "2024-08-28T10:00:00Z"
+  },
+  {
+    "id": 15,
+    "category": "Hogar",
+    "name": "Refrigerador",
+    "description": "Refrigerador con bastante capacidad de almacenamiento",
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/cl/rs65r5691b4-zs/gallery/cl-ref-sbs-rs5000-rs65r-297530-rs65r5691b4-zs-407949944?$2052_1641_PNG$",
+    "price": 1000000,
+    "user_id": 15,
+    "date": "2024-08-30T12:00:00Z"
+  }
+]
