@@ -70,7 +70,6 @@ const createTables = async () => {
   }
 };
 
-// Ejecutar la función de creación de tablas
 createTables();
 
 export default pool;
