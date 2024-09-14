@@ -47,15 +47,32 @@ const Register = () => {
       setError('Formato de fecha de nacimiento inválido. Usa dd/mm/yyyy.');
       return;
     }
+
     try {
-      await register({ username, email, phone_number: phoneNumber, date_of_birth: dateOfBirth, password });
-      navigate('/productos');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, phone_number: phoneNumber, date_of_birth: dateOfBirth, password }),
+      });
+
+      if (!response.ok) {
+        if (response.status === 400) {
+          throw new Error('Datos inválidos.');
+        } else {
+          throw new Error('Registro fallido. Por favor verifica tus datos e intenta de nuevo.');
+        }
+      }
+
+      const data = await response.json();
+      await register(data); // Pasar los datos del usuario a la función register del contexto
       setError('');
+      navigate('/productos');
     } catch (err) {
-      setError('El registro falló. Por favor, inténtelo de nuevo.');
+      setError(err.message);
     }
   };
-  
 
   return (
     <Form onSubmit={handleSubmit} className="">

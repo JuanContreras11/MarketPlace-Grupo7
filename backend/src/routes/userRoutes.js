@@ -10,6 +10,8 @@ router.post('/users', createUserController);
 // Ruta para iniciar sesión
 router.post('/login', loginUserController);
 
+router.post('/register', createUserController);
+
 // Ruta logout
 router.post('/logout', logoutUserController);
 
