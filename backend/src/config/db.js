@@ -1,5 +1,12 @@
 import pg from 'pg';
-import 'dotenv/config'
+import dotenv from 'dotenv';
+
+//Para trabajar con dos archivos .env
+if (process.env.NODE_ENV === 'production') {
+  dotenv.config({ path: '.env.production' });
+} else {
+  dotenv.config({ path: '.env' });
+}
 const { Pool } = pg;
 
 const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
@@ -69,7 +76,5 @@ const createTables = async () => {
     console.error('Error creating tables:', error);
   }
 };
-
-createTables();
-
+  createTables();
 export default pool;
