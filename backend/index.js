@@ -3,11 +3,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import productRoutes from './src/routes/productRoutes.js';
 import userRoutes from './src/routes/userRoutes.js';
-
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173" }));
+
 app.use(express.json());
 
 //Rutas

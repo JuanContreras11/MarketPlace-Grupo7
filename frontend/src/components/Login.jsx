@@ -23,26 +23,50 @@ const Login = () => {
       return;
     }
     if (!validateEmail(email)) {
-      setError('Invalid email format.');
+      setError('Formato de email inválido.');
       return;
     }
-    navigate('/productos');
     try {
-      await login(email, password); 
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( {email, password} ),
+      });
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Usuario no encontrado.');
+        } else if (response.status === 401) {
+          throw new Error('Contraseña incorrecta.');
+        } else {
+          console.log(response);
+          throw new Error('Login fallido. Por favor verifica tus credenciales e intenta de nuevo.');
+        }
+      }
+
+      const data = await response.json();
+      await login(data.success.token); // Asumiendo que tu backend devuelve un token
       setError('');
+      setEmail('');
+      setPassword('');
+      navigate('/productos');
     } catch (err) {
-      setError('Login fallido. Por favor verifica tus credenciales e intenta de nuevo.');
+      setError(err.message);
     }
   };
 
   return (
-    <Form onSubmit={handleLogin}  >
-      <InputField  type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    <Form onSubmit={handleLogin}>
+      <InputField type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <InputField type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button
-              type="submit"
-              className="w-full rounded-full  bg-red-600 p-3 text-white transition hover:bg-opacity-90"
-            >Iniciar Sesion</button>
+        type="submit"
+        className="w-full rounded-full bg-red-600 p-3 text-white transition hover:bg-opacity-90"
+      >
+        Iniciar Sesion
+      </button>
       {error && <p className="text-danger">{error}</p>}
     </Form>
   );
