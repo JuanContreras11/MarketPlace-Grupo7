@@ -1,17 +1,18 @@
 import React from "react";
-// import ProfilePage from "../components/ProfilePage";
+import { Link } from "react-router-dom";
+import ProfilePage from "../components/ProfilePage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import MisPublicaciones from "../components/MisPublicaciones";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 const Perfil = () => {
   return (
-    <div className="flex flex-col justify-around ">
+    <div className="flex flex-col justify-around">
       <NavBar />
       {/* Contenido principal */}
-      <main className="container mx-auto p-4 mt-4">       
+      <main className="container mx-auto p-4 mt-4">
         <div className="flex flex-row">
           <section className="bg-white p-4 mb-4 w-full md:w-1/2">
             {/* Contenido de la sección 1 */}
@@ -19,10 +20,9 @@ const Perfil = () => {
           </section>
           <section className="bg-white p-4 w-full md:w-1/2">
             {/* Contenido del formulario */}
-
             <form>
               <div className="mb-4 flex flex-row">
-                <FontAwesomeIcon icon={faUser} className="mt-3 mr-2"/>
+                <FontAwesomeIcon icon={faUser} className="mt-3 mr-2" />
                 <input
                   type="text"
                   id="nombre"
@@ -31,7 +31,7 @@ const Perfil = () => {
                 />
               </div>
               <div className="mb-4 flex flex-row">
-              <FontAwesomeIcon icon={faEnvelope} className="mt-3 mr-2"/>
+                <FontAwesomeIcon icon={faEnvelope} className="mt-3 mr-2" />
                 <input
                   type="email"
                   id="email"
@@ -40,7 +40,7 @@ const Perfil = () => {
                 />
               </div>
               <div className="mb-4 flex flex-row">
-              <FontAwesomeIcon icon={faPhone} className="mt-3 mr-2"/>
+                <FontAwesomeIcon icon={faPhone} className="mt-3 mr-2" />
                 <input
                   type="tel"
                   id="telefono"
@@ -49,6 +49,12 @@ const Perfil = () => {
                 />
               </div>
             </form>
+            {/* Botón para crear producto */}
+            <div className="mt-4">
+              <Link to="/crear-producto">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded">Crear Producto</button>
+              </Link>
+            </div>
           </section>
         </div>
         <section className="p-4 mb-5">
@@ -61,7 +67,6 @@ const Perfil = () => {
       </main>
 
       <Footer />
-      
     </div>
   );
 };

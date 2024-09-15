@@ -47,7 +47,7 @@ const Login = () => {
       }
 
       const data = await response.json();
-      await login(data.success.token); // Asumiendo que tu backend devuelve un token
+      await login(data.success.token); 
       setError('');
       setEmail('');
       setPassword('');

@@ -1,34 +1,42 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const ProductsContext = createContext();
 
 export const ProductsProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
-    const [error, setError] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await fetch('/products.json');
-                if (!response.ok) {
-                    setError('Error en la respuesta de la red');
-                    return;
-                }
-                const data = await response.json();
-                setProducts(data);
-            } catch (error) {
-                setError('Error al cargar el JSON');
-                console.error('Error al cargar el JSON:', error);
-            }
-        };
+  const fetchProducts = async (token) => {
+    try {
+      const response = await fetch('http://localhost:3000/products', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-        fetchProducts();
-    }, []);
+      if (!response.ok) {
+        const message = `Error: ${response.status} - ${response.statusText}`;
+        console.error(message);
+        setError(message);
+        return;
+      }
 
-    return (
-        <ProductsContext.Provider value={{ products, error }}>
-            {children}
-        </ProductsContext.Provider>
-    );
+      const data = await response.json();
+      console.log('Productos obtenidos:', data);
+      setProducts(data);
+    } catch (err) {
+      console.error('Error al obtener productos:', err);
+      setError('No se pudo obtener los productos. Inténtalo más tarde.');
+    }
+  };
+
+  const addProduct = (newProduct) => {
+    setProducts((prevProducts) => [newProduct, ...prevProducts]);
+  };
+
+  return (
+    <ProductsContext.Provider value={{ products, error, fetchProducts, addProduct }}>
+      {children}
+    </ProductsContext.Provider>
+  );
 };
-

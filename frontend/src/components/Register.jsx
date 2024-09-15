@@ -66,7 +66,7 @@ const Register = () => {
       }
 
       const data = await response.json();
-      await register(data); // Pasar los datos del usuario a la función register del contexto
+      await register(data); 
       setError('');
       navigate('/productos');
     } catch (err) {

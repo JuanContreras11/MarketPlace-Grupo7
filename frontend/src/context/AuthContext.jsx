@@ -15,13 +15,17 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (token) => {
     return new Promise((resolve, reject) => {
-      if (token) {
-        const userData = { token };
-        localStorage.setItem('user', JSON.stringify(userData));
-        setUser(userData);
-        resolve();
-      } else {
-        reject(new Error('Credenciales inválidas'));
+      try {
+        if (token) {
+          const userData = { token };
+          localStorage.setItem('user', JSON.stringify(userData));
+          setUser(userData);
+          resolve();
+        } else {
+          throw new Error('Credenciales inválidas');
+        }
+      } catch (error) {
+        reject(error);
       }
     });
   };
